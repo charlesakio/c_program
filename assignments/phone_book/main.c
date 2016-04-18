@@ -87,3 +87,30 @@ void preOrder(NodePtr node) {
     preOrder(node -> rightChild);
   }
 }//preOrder
+
+NodePtr findOrInsert(BinaryTree bt, NodeData data) {
+  
+  if(node.root == NULL) {
+    return Node(data);
+  }
+
+  NodePtr currentPtr = node.root;
+  int compare;
+
+  while (( compare = strcmp(data.word, currentPtr -> data.word)) != 0) {
+    if(compare < 0) {
+      if (currentPtr -> leftChild == NULL) {
+        return currentPtr -> leftChild = Node(data);
+    
+      }
+      
+      currentPtr = currentPtr -> leftChild;
+    
+    } else {
+      if (currentPtr -> rightChild == NULL) {
+        currentPtr = currentPtr -> rightChild;
+      }
+    }
+    return currentPtr;
+  }
+}
